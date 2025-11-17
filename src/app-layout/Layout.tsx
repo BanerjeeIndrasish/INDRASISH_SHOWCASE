@@ -1,5 +1,5 @@
 import { Layout } from 'antd';
-import { Navigate, Outlet, useLocation, useNavigate } from 'react-router';
+import { Outlet, useLocation, useNavigate } from 'react-router';
 const { Header, Content, Footer } = Layout;
 import HeaderComponent from './Header';
 import { Github, Linkedin } from 'lucide-react';
