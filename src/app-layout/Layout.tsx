@@ -1,10 +1,21 @@
 import { Layout } from 'antd';
-import { Outlet } from 'react-router';
+import { Navigate, Outlet, useLocation, useNavigate } from 'react-router';
 const { Header, Content, Footer } = Layout;
 import HeaderComponent from './Header';
 import { Github, Linkedin } from 'lucide-react';
+import { useEffect } from 'react';
 
 const AppLayout = () => {
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        // console.log('Path', location.pathname)
+        if(location.pathname === '/') {
+            // Redirect to /home
+            navigate('/home');
+        }
+    }, [])
 
     return (
         <Layout style={{ minHeight: '100vh' }}>

@@ -10,8 +10,8 @@ export default function Header() {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        console.log('---', activeSection)
-    }, [activeSection]);
+        setActiveSection(location.pathname)
+    }, [location.pathname]);
 
     useEffect(() => {
         const handleScroll = () => {

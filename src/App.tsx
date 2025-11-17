@@ -1,7 +1,7 @@
 import AppRouter from './app-router/Router'
 import './App.css'
 
-const App = () => {
+const App = () => {  
   return <AppRouter />
 }
 

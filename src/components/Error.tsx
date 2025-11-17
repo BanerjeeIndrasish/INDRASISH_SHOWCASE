@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+import { CSSProperties } from "react";
 
-const styles = {
+const styles: Record<string, CSSProperties> = {
     container: {
         height: '100vh',
         display: 'flex',
