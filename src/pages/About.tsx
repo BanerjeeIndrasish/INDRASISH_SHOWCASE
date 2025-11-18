@@ -17,7 +17,7 @@ const About = () => {
         {
             role: "Game & Web Developer",
             company: "Biswa Games Pvt Ltd, Kolkata",
-            period: "April 2022 - October 2024",
+            period: "April 2022 - August 2024",
             responsibilities: [
                 "Engineered full-stack web applications handling both frontend (React.js) and backend (Node.js/Express) development",
                 "Developed core gameplay mechanics and interactive VR experiences published on Meta Quest Store using Unity and C#",

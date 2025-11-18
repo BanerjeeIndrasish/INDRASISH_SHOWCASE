@@ -1,6 +1,6 @@
-import { Briefcase, Calendar } from "lucide-react";
+import { Briefcase, Calendar, Link } from "lucide-react";
 import { useState } from "react";
-import { Button } from "antd";
+import { Button, Tooltip } from "antd";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "../utils";
 
@@ -43,6 +43,22 @@ const Projects = () => {
                                             <span className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
                                                 {project.type}
                                             </span>
+                                            {project.link && project.link.length > 0 && <div className="flex gap-2">
+                                                {project.link.map((linkItem, index) =>
+                                                    Object.entries(linkItem).map(([key, value]) =>
+                                                        <Tooltip key={index} title={key.charAt(0).toUpperCase() + key.slice(1)}>
+                                                            <a
+                                                                href={value}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-gray-500 hover:text-blue-600 transition"
+                                                            >
+                                                                <Link size={18} />
+                                                            </a>
+                                                        </Tooltip>
+                                                    )
+                                                )}
+                                            </div>}
                                         </div>
                                         <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                                             <span className="flex items-center gap-1">

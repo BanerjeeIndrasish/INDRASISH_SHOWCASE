@@ -14,7 +14,7 @@ const projects = [
             "Responsive design for mobile and desktop"
         ],
         tech: ["React.js", "TypeScript", "RTK Query", "Tailwind CSS", "Node.js", "REST API"],
-        period: "2024"
+        period: "2025-Present"
     },
     {
         title: "JP International ERP",
@@ -29,7 +29,8 @@ const projects = [
             "Real-time data synchronization"
         ],
         tech: ["React.js", "TypeScript", "Redux", "Material-UI", "Node.js"],
-        period: "2024"
+        period: "2025",
+        link: [{ Website: "https://jpi.websteptech.co.uk/" }]
     },
     {
         title: "Uncommon Christian Dating",
@@ -44,22 +45,30 @@ const projects = [
             "Multi-step registration with validation"
         ],
         tech: ["React.js", "TypeScript", "Ant Design", "API Integration"],
-        period: "2024"
+        period: "2024-2025",
+        link: [
+            { Admin: "https://unc.webstep.in/" },
+            { IOS: "https://apps.apple.com/ie/app/uncommon-christian-dating/id1642626538" },
+            { Andriod: "https://play.google.com/store/apps/dev?id=7560027683670294358" }
+        ]
     },
     {
         title: "Durgapur Municipal Corporation",
         type: "Government Portal",
         company: "Webstep Technologies Private Limited",
-        description: "Complete digital solution including website, mobile application, and admin dashboard for municipal services.",
+        description: "Complete digital solution for solid waste management and other services including website, mobile application and admin dashboard for municipal services.",
         features: [
-            "Citizen services portal with complaint management",
             "Mobile app for Android platform",
-            "Admin dashboard for service tracking",
-            "Document management system",
-            "Public announcement and notice board"
+            "Solid waste collection management system",
+            "Citizen services portal with complaint management",
+            "Admin dashboard for service tracking and user data management",
+            "Billing generation system",
+            "Public announcement and notice board",
+            "Payment gateway integration"
         ],
         tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MySQL", "Android"],
-        period: "2023-2024"
+        period: "2024-2025",
+        link: [{ Admin: "https://dmc.websteptech.co.uk/" }, { Android: "https://play.google.com/store/apps/details?id=com.dmcsolidwaste&hl=en" }]
     },
     {
         title: "IIM Amritsar Admission Module",
@@ -74,7 +83,7 @@ const projects = [
             "Automated email notifications"
         ],
         tech: ["React.js", "Node.js", "Express.js", "MySQL", "REST API"],
-        period: "2023"
+        period: "2024-Present"
     },
     {
         title: "Sundarini Organic",
@@ -89,7 +98,23 @@ const projects = [
             "Payment integration and order tracking"
         ],
         tech: ["React.js", "Node.js", "Express.js", "MySQL", "Android"],
-        period: "2022-2023"
+        period: "2024"
+    },
+    {
+        title: "DraconG",
+        type: "VR Game (Meta Quest)",
+        company: "Biswa Games",
+        description: "Rythmic flying and attacking game in virtual reality with immersive gameplay mechanics.",
+        features: [
+            "Rythmic flying and attacking gameplay",
+            "VR controller integration",
+            "Score tracking and leaderboards",
+            "Multiple game modes and maps",
+            "Immersive 3D environments"
+        ],
+        tech: ["Unity", "C#", "VR Development", "Meta Quest SDK"],
+        period: "2023",
+        link: [{ Game: "https://www.meta.com/en-gb/experiences/dracong/6441992099254958/" }]
     },
     {
         title: "Company Website",
@@ -103,7 +128,8 @@ const projects = [
             "Content management system"
         ],
         tech: ["Reacj.js", "Node.js", "Express.js", "MySQL", "REST API"],
-        period: "2023"
+        period: "2023",
+        link: [{ Website: "https://www.biswagames.com/" }]
     },
     {
         title: "The Verse",
@@ -118,10 +144,10 @@ const projects = [
             "Published on official Quest Store"
         ],
         tech: ["Unity", "C#", "VR Development", "Meta Quest SDK"],
-        period: "2023"
+        period: "2022-2023"
     },
     {
-        title: "Mini Golf VR",
+        title: "Beyond Putt",
         type: "VR Game",
         company: "Biswa Games",
         description: "Interactive golf game in virtual reality with realistic physics and realtime gameplay with friends.",
@@ -133,7 +159,8 @@ const projects = [
             "Immersive 3D environments"
         ],
         tech: ["Unity", "C#", "VR Development", "Physics Engine"],
-        period: "2023"
+        period: "2023",
+        link: [{ Game: "https://www.meta.com/en-gb/experiences/beyond-putt-realistic-physics-mini-golf/7438772032884118/" }]
     },
     {
         title: "Bowling Blitz",
@@ -148,7 +175,8 @@ const projects = [
             "Immersive 3D environments"
         ],
         tech: ["Unity", "C#", "VR Development", "Physics Engine"],
-        period: "2022"
+        period: "2022",
+        link: [{ Game: "https://www.meta.com/experiences/bowling-blitz-celebrate-the-carnival/8918080398254339/" }]
     },
 ];
 
