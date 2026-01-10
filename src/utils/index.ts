@@ -2,6 +2,22 @@ import myImg from '../assets/MyIMG.JPG'
 
 const projects = [
     {
+        title: "Team Assist CRM",
+        type: "Enterprise CRM Platform(Company Internal)",
+        company: "Webstep Technologies Private Limited",
+        description: "Full-stack enterprise CRM system for managing customer relationships, sales pipeline, and project workflows with real-time notifications and comprehensive tracking capabilities.",
+        features: [
+            "Opportunity and account management with sales pipeline tracking",
+            "Contact management system with relationship mapping",
+            "Project planning and task assignment with status tracking",
+            "Time logging and productivity analytics",
+            "Email notification system for updates and alerts",
+            "Role-based access control and user permissions",
+        ],
+        tech: ["React.js", "TypeScript", "RTK Query", "Tailwind CSS", "Node.js", "Express.js", "REST API", "Email Integration"],
+        period: "2025-Present",
+    },
+    {
         title: "Lyfetrip Bookings",
         type: "Flight Booking Platform",
         company: "Webstep Technologies Private Limited",
