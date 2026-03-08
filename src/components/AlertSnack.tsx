@@ -1,10 +1,6 @@
 import { Alert, AlertTitle, Snackbar, IconButton } from '@mui/material'
 import { CloseOutlined } from '@ant-design/icons'
 
-// interface SnackBarAnchor {
-//     horizontal: 'center';
-//     vertical: 'top'
-// }
 
 interface AlertSnackProps {
     open: boolean;
@@ -12,6 +8,7 @@ interface AlertSnackProps {
     severity: "success" | "error" | "warning" | "info";
     closeAlert: () => void
 }
+
 export default function AlertSnack({ open, message, severity, closeAlert }: AlertSnackProps) {
 
     return (

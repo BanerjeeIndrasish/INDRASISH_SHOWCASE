@@ -1,5 +1,4 @@
-import { Menu } from 'antd';
-import { X } from 'lucide-react';
+import { Menu, X, Code2, Home, Info, Briefcase } from 'lucide-react';
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router';
 
@@ -24,76 +23,103 @@ export default function Header() {
     const navLinks = [
         {
             name: 'Home',
-            href: '/home'
+            href: '/home',
+            icon: <Home className='w-4 h-4 text-blue-400' />
         },
         {
             name: 'Projects',
-            href: '/projects'
+            href: '/projects',
+            icon: <Briefcase className='w-4 h-4 text-blue-400' />
         },
         {
             name: 'About',
-            href: '/about'
+            href: '/about',
+            icon: <Info className='w-4 h-4 text-blue-400' />
         }
     ];
 
-
     return (
-        // <nav className={`min-h-12 fixed w-full mt-auto z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/65 backdrop-blur-md shadow-lg' : 'bg-slate-900'}`}>
         <nav
-            className={`w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/65 backdrop-blur-md shadow-lg' : 'bg-slate-900'
+            className={`h-16 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/65 backdrop-blur-md shadow-lg' : 'bg-slate-900'
                 }`}
         >
-            <div className="w-full mx-auto px-2 sm:px-4 lg:px-6 flex items-center justify-between">
-                {/* Desktop Navigation */}
-                <div className="hidden md:flex space-x-8">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            to={link.href}
-                            onClick={() => setActiveSection(link.href)}
-                        >
-                            <h2
-                                className={`text-md font-bold
-                                    ${activeSection === link.href
-                                        ? 'text-blue-400 underline'
-                                        : 'text-gray-400 hover:text-white transition-colors duration-300'}
-                                    `}
-                            >
-                                {link.name}
-                            </h2>
-                        </Link>
-                    ))}
-                </div>
+            <div className="w-full h-16 mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="h-16 flex items-center justify-between">
+                    {/* Logo/Brand */}
+                    <Link to="/home" className="flex items-center gap-2 group">
+                        <div className="bg-blue-600 p-2 rounded-lg group-hover:bg-blue-500 transition-colors">
+                            <Home className="w-5 h-5 text-white" />
+                        </div>
+                        {/* <div className="hidden sm:block">
+                            <h1 className="text-white font-bold text-md">Indrasish Banerjee</h1>
+                            <p className="text-gray-400 text-xs">Frontend Developer</p>
+                        </div> */}
+                    </Link>
 
-                {/* Mobile menu button */}
-                <button
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="md:hidden text-white p-2"
-                >
-                    {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                </button>
-            </div>
-
-            {/* Mobile Navigation */}
-            {isMenuOpen && (
-                <div className="md:hidden bg-slate-900/98 backdrop-blur-md">
-                    <div className="px-2 pt-2 pb-3 space-y-1">
+                    {/* Desktop Navigation */}
+                    <div className="h-full hidden md:flex items-center space-x-1">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 to={link.href}
-                                className="block px-3 py-2 text-gray-300 hover:text-white hover:bg-purple-900/50 rounded-md transition-colors duration-300"
-                                onClick={() => setIsMenuOpen(false)}
+                                onClick={() => setActiveSection(link.href)}
+                                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${activeSection === link.href
+                                    ? 'bg-blue-600 text-white'
+                                    : 'text-gray-300 hover:text-white hover:bg-slate-800'
+                                    }`}
                             >
-                                {link.name}
+                                <div className='flex items-center gap-1.5'>
+                                    {link.icon}
+                                    {link.name}
+                                </div>
                             </Link>
                         ))}
-                        <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full">
-                            Get Started
-                        </button>
+                    </div>
+
+                    {/* Mobile menu button */}
+                    <button
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-slate-800 transition-colors"
+                        aria-label="Toggle menu"
+                        style={{
+                            backgroundColor: isMenuOpen ? 'red' : ''
+                        }}
+                    >
+                        {isMenuOpen ? (
+                            <X className="w-6 h-6" />
+                        ) : (
+                            <Menu className="w-6 h-6" />
+                        )}
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile Navigation */}
+            {isMenuOpen && (
+                <div className="md:hidden border-t border-slate-800">
+                    <div className="px-4 py-3 space-y-1 bg-slate-900/98 backdrop-blur-md">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                to={link.href}
+                                className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeSection === link.href
+                                    ? 'bg-blue-600 text-white'
+                                    : 'text-gray-300 hover:text-white hover:bg-slate-800'
+                                    }`}
+                                onClick={() => {
+                                    setActiveSection(link.href);
+                                    setIsMenuOpen(false);
+                                }}
+                            >
+                                <div className='flex items-center gap-1'>
+                                    {link.icon}
+                                    {link.name}
+                                </div>
+                            </Link>
+                        ))}
                     </div>
                 </div>
             )}
         </nav>
-    )
+    );
 }

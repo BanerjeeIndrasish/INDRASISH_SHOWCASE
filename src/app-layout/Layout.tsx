@@ -25,6 +25,7 @@ const AppLayout = () => {
                     top: 0,
                     left: 0,
                     width: '100%',
+                    maxHeight: 64,
                     padding: 0,
                     zIndex: 1000,
                     background: 'transparent',

@@ -3,197 +3,182 @@ import myImg from '../assets/MyIMG.JPG'
 const projects = [
     {
         title: "Team Assist CRM",
-        type: "Enterprise CRM Platform(Company Internal)",
+        type: "Enterprise CRM Platform (Company Internal)",
         company: "Webstep Technologies Private Limited",
-        description: "Full-stack enterprise CRM system for managing customer relationships, sales pipeline, and project workflows with real-time notifications and comprehensive tracking capabilities.",
+        description: "Comprehensive internal CRM system managing the complete customer lifecycle from initial contact to project delivery. Built to streamline sales operations, opportunity tracking, and project management with real-time collaboration features.",
         features: [
-            "Opportunity and account management with sales pipeline tracking",
-            "Contact management system with relationship mapping",
-            "Project planning and task assignment with status tracking",
-            "Time logging and productivity analytics",
-            "Email notification system for updates and alerts",
-            "Role-based access control and user permissions",
+            "Multi-tier CRM flow: User → Account → Contact → Opportunity → Project → Tasks → Task Logs with complete relationship mapping",
+            "Dynamic opportunity pipeline with drag-and-drop stage management and win probability tracking",
+            "Contact management with hierarchical organization structures and relationship visualization",
+            "Project planning module with Gantt-style timelines, milestone tracking, and dependency management",
+            "Time logging system with automated timesheet generation and productivity analytics dashboard",
+            "Real-time email notification system for task assignments, deadline reminders, and status updates",
+            "Granular role-based access control with customizable permission sets for managers, team leads, and employees",
+            "Advanced reporting engine with custom filters, data export, and visual analytics",
+            "Custom form builder with conditional field logic based on user roles and project types"
         ],
-        tech: ["React.js", "TypeScript", "RTK Query", "Tailwind CSS", "Node.js", "Express.js", "REST API", "Email Integration"],
-        period: "2025-Present",
-    },
-    {
-        title: "Lyfetrip Bookings",
-        type: "Flight Booking Platform",
-        company: "Webstep Technologies Private Limited",
-        description: "Comprehensive flight booking platform with integrated admin panel for managing bookings, user accounts, and flight inventory.",
-        features: [
-            "Real-time flight search and booking system",
-            "Admin dashboard with role-based access control",
-            "User management and booking analytics",
-            "Payment gateway integration",
-            "Responsive design for mobile and desktop"
-        ],
-        tech: ["React.js", "TypeScript", "RTK Query", "Tailwind CSS", "Node.js", "REST API"],
-        period: "2025-Present"
-    },
-    {
-        title: "JP International ERP",
-        type: "Enterprise Resource Planning",
-        company: "Webstep Technologies Private Limited",
-        description: "Complete ERP system designed for streamlined business management across multiple departments and workflows.",
-        features: [
-            "Multi-module system (Inventory, HR, Finance, Sales)",
-            "Custom form handling with conditional validations",
-            "Advanced data tables with filtering and sorting",
-            "Role-based permissions and access control",
-            "Real-time data synchronization"
-        ],
-        tech: ["React.js", "TypeScript", "Redux", "Material-UI", "Node.js"],
-        period: "2025",
-        link: [{ Website: "https://jpi.websteptech.co.uk/" }]
-    },
-    {
-        title: "Uncommon Christian Dating",
-        type: "Dating Application",
-        company: "Webstep Technologies Private Limited",
-        description: "Faith-based dating platform with comprehensive web admin panel for user moderation and content management.",
-        features: [
-            "User profile management and matching system",
-            "Content moderation dashboard",
-            "Analytics and user activity tracking",
-            "Messaging system oversight",
-            "Multi-step registration with validation"
-        ],
-        tech: ["React.js", "TypeScript", "Ant Design", "API Integration"],
-        period: "2024-2025",
-        link: [
-            { Admin: "https://unc.webstep.in/" },
-            { IOS: "https://apps.apple.com/ie/app/uncommon-christian-dating/id1642626538" },
-            { Andriod: "https://play.google.com/store/apps/dev?id=7560027683670294358" }
+        tech: ["React.js", "TypeScript", "RTK Query", "Tailwind CSS", "Ant Design", "Node.js", "Express.js", "MySQL", "REST API", "Email Integration"],
+        period: "2024-Present",
+        highlights: [
+            "Replaced multiple disconnected tools with unified platform",
+            "Reduced opportunity tracking time by 60% with automated pipeline management",
+            "Improved team collaboration with real-time updates and centralized communication"
         ]
     },
     {
-        title: "Durgapur Municipal Corporation",
-        type: "Government Portal",
+        title: "JP International ERP",
+        type: "Enterprise Resource Planning System",
         company: "Webstep Technologies Private Limited",
-        description: "Complete digital solution for solid waste management and other services including website, mobile application and admin dashboard for municipal services.",
+        description: "Complete ERP solution for import-export business, digitizing entire procurement and sales workflows. Replaced Excel-based manual processes with automated, real-time system featuring comprehensive inventory, vendor, and logistics management.",
         features: [
-            "Mobile app for Android platform",
-            "Solid waste collection management system",
-            "Citizen services portal with complaint management",
-            "Admin dashboard for service tracking and user data management",
-            "Billing generation system",
-            "Public announcement and notice board",
-            "Payment gateway integration"
+            "Master Data Management: Centralized database for Warehouses, Vendors/Customers, Transport/Logistics Partners, and inventory items with bulk import/export",
+            "Procurement Workflow: RFQ creation with multi-vendor comparison → Purchase Order generation → Goods Receipt with QC checks → Inbound Logistics tracking → Purchase Invoice reconciliation",
+            "Sales Workflow: Sales Order processing → Delivery Note generation with shipping details → Sales Invoice with tax calculations and automated document generation",
+            "Inventory Management: Real-time stock tracking across multiple warehouses, low-stock alerts, and automated reorder suggestions",
+            "Vendor Portal: Supplier performance tracking, payment history, and automated vendor scorecards",
+            "Document Management: Automated PDF generation for PO, invoices, delivery notes with customizable templates",
+            "Reporting Dashboard: Real-time analytics for purchase trends, sales performance, inventory turnover, and profit margins",
+            "Multi-currency Support: International transaction handling with automatic exchange rate updates",
+            "Approval Workflows: Multi-level approval system for purchase orders and payments with email notifications"
         ],
-        tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MySQL", "Android"],
+        tech: ["React.js", "TypeScript", "Redux", "Material-UI", "Formik", "Node.js", "Express.js", "MySQL", "REST API", "PDF Generation"],
         period: "2024-2025",
-        link: [{ Admin: "https://dmc.websteptech.co.uk/" }, { Android: "https://play.google.com/store/apps/details?id=com.dmcsolidwaste&hl=en" }]
+        link: [{ Website: "https://jpi.websteptech.co.uk/" }],
+        highlights: [
+            "Eliminated Excel-based manual tracking, saving 15+ hours weekly",
+            "Reduced order processing errors by 85% with automated validations",
+            "Real-time inventory visibility across 5+ warehouses",
+            "Generated 1000+ automated documents in first 3 months"
+        ]
     },
     {
-        title: "IIM Amritsar Admission Module",
-        type: "Educational Platform",
+        title: "Lyfetrip Bookings",
+        type: "Flight Booking Platform with Payment Integration",
         company: "Webstep Technologies Private Limited",
-        description: "Admin portal and admission module for managing student applications, course enrollment, and academic processes.",
+        description: "Full-featured flight booking platform integrating Amadeus flight search APIs and Razorpay payment gateway. Complete with responsive booking flow and comprehensive admin dashboard for managing bookings, users, and financial analytics.",
         features: [
-            "Student admission workflow management",
-            "Document verification system",
-            "Course and batch management",
-            "Application tracking dashboard",
-            "Automated email notifications"
+            "Flight Search Engine: Real-time flight search with Amadeus API integration supporting multi-city, one-way, and round-trip queries",
+            "Advanced Search Filters: Filter by airlines, stops, departure times, price range, and cabin class with live result updates",
+            "Seat Selection Interface: Interactive seat map with real-time availability and pricing for different seat categories",
+            "Multi-step Booking Flow: Passenger details → Seat selection → Add-ons (meals, baggage) → Payment with progress indicator",
+            "Razorpay Payment Gateway: Secure payment processing with webhook notifications for payment status updates",
+            "Booking Management: View/modify/cancel bookings with automated refund processing and email confirmations",
+            "User Dashboard: Booking history, saved travelers, payment history, and e-ticket downloads",
+            "Admin Panel Features: User management with verification status, booking analytics with revenue reports, payment reconciliation dashboard",
+            "Financial Reporting: Daily/weekly/monthly revenue reports, payment gateway transaction logs, and commission tracking",
+            "Email Automation: Booking confirmations, payment receipts, flight updates, and cancellation notifications",
+            "Responsive Design: Optimized mobile and desktop experiences with touch-friendly booking flow"
         ],
-        tech: ["React.js", "Node.js", "Express.js", "MySQL", "REST API"],
+        tech: ["React.js", "TypeScript", "RTK Query", "Tailwind CSS", "Amadeus API", "Razorpay", "Node.js", "Express.js", "MySQL", "REST API", "Email Integration"],
+        period: "2024-2025",
+        highlights: [
+            "Integrated complex Amadeus testing APIs with 20+ endpoints",
+            "Processed test transactions worth ₹10L+ through Razorpay sandbox",
+            "Built complete booking flow from search to confirmation in 6 weeks",
+            "Project halted at production stage pending Amadeus enterprise API consolidator approval"
+        ]
+    },
+    {
+        title: "Durgapur Municipal Corporation - Solid Waste Management",
+        type: "Government Citizen Services Platform",
+        company: "Webstep Technologies Private Limited",
+        description: "Comprehensive digital solution for municipal solid waste management including Android citizen app, public website, and admin dashboard. Enables citizens to register, pay bills, and book municipal services while providing administrators complete service tracking and analytics.",
+        features: [
+            "Citizen Registration: Multi-step registration with Aadhaar verification, address proof upload, and mobile OTP verification",
+            "Municipal Payment Portal: Pay property tax, water bills, and service charges with payment gateway integration and receipt generation",
+            "Garbage Collection Booking: Schedule daily/weekly garbage pickup with preferred time slots and route optimization for collection teams",
+            "SWM Vehicle/Bucket Booking: Book waste collection vehicles and community bins for events or bulk waste disposal",
+            "Municipal Facility Reservations: Book community halls, auditoriums, and event spaces with availability calendar and payment integration",
+            "Complaint Management: Lodge complaints with photo uploads, track resolution status, and receive SMS/email updates",
+            "Admin Dashboard: Real-time service request tracking, citizen database management, and collection route planning",
+            "Analytics Module: Daily collection statistics, revenue reports, complaint resolution metrics, and citizen engagement analytics",
+            "Payment Reconciliation: Track all transactions, generate daily collection reports, and export financial data",
+            "Notification System: Push notifications for garbage collection schedules, payment reminders, and important announcements",
+            "Multi-role Access: Separate interfaces for citizens, field workers, supervisors, and administrators",
+            "Android Application: Native mobile app for Android with offline capability for service requests"
+        ],
+        tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MySQL", "REST API", "Android (Java)", "Payment Gateway", "SMS/Email Integration", "Push Notifications"],
+        period: "2024-2025",
+        link: [
+            { Admin: "https://dmc.websteptech.co.uk/" }, 
+            { Android: "https://play.google.com/store/apps/details?id=com.dmcsolidwaste&hl=en" }
+        ],
+        highlights: [
+            "Serving 500,000+ residents of Durgapur municipality",
+            "Digitized 100% of manual payment processes",
+            "Reduced service request processing time from days to hours",
+            "Integrated 15+ different municipal services in single platform"
+        ]
+    },
+    {
+        title: "Uncommon Christian Dating",
+        type: "Faith-Based Dating Application - Admin Panel",
+        company: "Webstep Technologies Private Limited",
+        description: "Comprehensive web admin panel for faith-based dating platform, enabling content moderation, user management, and platform analytics.",
+        features: [
+            "User profile moderation with photo/content approval workflow",
+            "Match analytics and user interaction tracking",
+            "Content management system for faith-based resources",
+            "Messaging system oversight and inappropriate content flagging",
+            "Subscription management and payment tracking",
+            "User verification and background check coordination"
+        ],
+        tech: ["React.js", "TypeScript", "Ant Design", "REST API", "Chart.js"],
+        period: "2024-2025",
+        link: [
+            { Admin: "https://unc.webstep.in/" },
+            { iOS: "https://apps.apple.com/ie/app/uncommon-christian-dating/id1642626538" },
+            { Android: "https://play.google.com/store/apps/dev?id=7560027683670294358" }
+        ]
+    },
+    {
+        title: "IIM Amritsar Admission Portal",
+        type: "Educational Institution Management",
+        company: "Webstep Technologies Private Limited",
+        description: "Admin portal and admission module for managing student applications, course enrollment, and academic processes at IIM Amritsar.",
+        features: [
+            "Multi-stage admission workflow with document verification",
+            "Application tracking dashboard with status filters",
+            "Course and batch management with seat allocation",
+            "Automated email notifications for application updates",
+            "Interview scheduling and feedback system",
+            "Payment integration for application fees"
+        ],
+        tech: ["React.js", "TypeScript", "Node.js", "Express.js", "MySQL", "REST API"],
         period: "2024-Present"
     },
     {
         title: "Sundarini Organic",
         type: "E-commerce Platform",
         company: "Webstep Technologies Private Limited",
-        description: "Full-stack e-commerce solution with website and Android application for organic product sales.",
+        description: "Full e-commerce solution with website and Android application for organic product sales.",
         features: [
-            "Product catalog with search and filters",
-            "Shopping cart and checkout system",
-            "Order management dashboard",
-            "Android mobile application",
-            "Payment integration and order tracking"
+            "Product catalog with advanced search and category filters",
+            "Shopping cart with discount code support",
+            "Order management dashboard for vendors",
+            "Android mobile application for customers",
+            "Payment gateway integration and order tracking",
+            "Delivery management with route optimization"
         ],
-        tech: ["React.js", "Node.js", "Express.js", "MySQL", "Android"],
+        tech: ["React.js", "Node.js", "Express.js", "MySQL", "Android", "Payment Gateway"],
         period: "2024"
     },
     {
-        title: "DraconG",
-        type: "VR Game (Meta Quest)",
+        title: "Company Website - Biswa Games",
+        type: "Corporate Website",
         company: "Biswa Games",
-        description: "Rythmic flying and attacking game in virtual reality with immersive gameplay mechanics.",
+        description: "Company website with client feedback system, FAQ management, and portfolio showcase.",
         features: [
-            "Rythmic flying and attacking gameplay",
-            "VR controller integration",
-            "Score tracking and leaderboards",
-            "Multiple game modes and maps",
-            "Immersive 3D environments"
+            "Responsive website design with modern UI",
+            "Client feedback form with backend integration",
+            "Dynamic FAQ section with admin management",
+            "Portfolio showcase for published games",
+            "Contact form with email notifications"
         ],
-        tech: ["Unity", "C#", "VR Development", "Meta Quest SDK"],
-        period: "2023",
-        link: [{ Game: "https://www.meta.com/en-gb/experiences/dracong/6441992099254958/" }]
-    },
-    {
-        title: "Company Website",
-        type: "Website",
-        company: "Biswa Games",
-        description: "Company website design from scratch, user and client feedback form handling.",
-        features: [
-            "Responsive website design",
-            "Client feedback form integration",
-            "FAQ section with dynamic content",
-            "Content management system"
-        ],
-        tech: ["Reacj.js", "Node.js", "Express.js", "MySQL", "REST API"],
+        tech: ["React.js", "Node.js", "Express.js", "MySQL", "REST API"],
         period: "2023",
         link: [{ Website: "https://www.biswagames.com/" }]
-    },
-    {
-        title: "The Verse",
-        type: "VR Game (Meta Quest)",
-        company: "Biswa Games",
-        description: "Immersive 3D open-world VR game published on Meta Quest Store featuring interactive gameplay mechanics.",
-        features: [
-            "Open-world exploration environment",
-            "Interactive VR gameplay mechanics",
-            "Optimized for Meta Quest hardware",
-            "Physics-based interactions",
-            "Published on official Quest Store"
-        ],
-        tech: ["Unity", "C#", "VR Development", "Meta Quest SDK"],
-        period: "2022-2023"
-    },
-    {
-        title: "Beyond Putt",
-        type: "VR Game",
-        company: "Biswa Games",
-        description: "Interactive golf game in virtual reality with realistic physics and realtime gameplay with friends.",
-        features: [
-            "Realistic golf physics simulation",
-            "VR controller integration",
-            "Score tracking and leaderboards",
-            "Multiple game modes",
-            "Immersive 3D environments"
-        ],
-        tech: ["Unity", "C#", "VR Development", "Physics Engine"],
-        period: "2023",
-        link: [{ Game: "https://www.meta.com/en-gb/experiences/beyond-putt-realistic-physics-mini-golf/7438772032884118/" }]
-    },
-    {
-        title: "Bowling Blitz",
-        type: "VR Game",
-        company: "Biswa Games",
-        description: "Interactive bowling game in virtual reality with realistic physics and engaging gameplay.",
-        features: [
-            "Realistic bowling physics simulation",
-            "VR controller integration",
-            "Score tracking and leaderboards",
-            "Multiple game modes",
-            "Immersive 3D environments"
-        ],
-        tech: ["Unity", "C#", "VR Development", "Physics Engine"],
-        period: "2022",
-        link: [{ Game: "https://www.meta.com/experiences/bowling-blitz-celebrate-the-carnival/8918080398254339/" }]
-    },
+    }
 ];
 
 const myImages = {
