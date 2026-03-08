@@ -1,4 +1,4 @@
-import { Menu, X, Code2, Home, Info, Briefcase } from 'lucide-react';
+import { Menu, X, Home, Info, Briefcase } from 'lucide-react';
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router';
 
