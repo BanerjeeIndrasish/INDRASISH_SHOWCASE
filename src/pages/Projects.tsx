@@ -122,9 +122,9 @@ const Projects = () => {
                             onClick={() => { setFilter(t); setShowAll(false); }}
                             aria-pressed={filter === t}
                             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold ring-1 transition-all duration-200
-                            focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
+                            focus-visible:none focus-visible:outline-indigo-600
                             ${filter === t
-                                    ? 'bg-[#1B1F3B] text-white ring-[#1B1F3B] shadow-lg shadow-indigo-900/20'
+                                    ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white ring-2 ring-indigo-400 shadow-lg shadow-indigo-500/50'
                                     : 'bg-white text-slate-700 ring-slate-300 hover:ring-indigo-500 hover:text-indigo-700'
                                 }`}
                         >
@@ -146,7 +146,7 @@ const Projects = () => {
                     <div className="mt-10 flex justify-center">
                         <button
                             onClick={() => setShowAll((s) => !s)}
-                            className="rounded-xl bg-[#1B1F3B] px-8 py-3.5 font-semibold text-white transition hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            className="rounded-xl bg-[#3B1F3B] px-8 py-3.5 font-semibold border-black shadow-md transition hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                         >
                             {showAll ? 'Show fewer' : `Show all ${filtered.length} projects`}
                         </button>
