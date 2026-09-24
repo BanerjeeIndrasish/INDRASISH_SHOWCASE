@@ -1,6 +1,32 @@
 import myImg from '../assets/MyIMG.JPG'
+import { Project } from '../types';
 
-const projects = [
+const projects: Project[] = [
+    {
+        title: "Development Flow - AI-Powered Project Management",
+        type: "Project & Task Management Platform with Generative AI",
+        company: "Personal Project",
+        description: "Full-stack project management system combining traditional task workflows with Generative AI assistance. Designed to interpret natural-language requests, extract structured parameters, and trigger backend operations for projects, tasks, and time logs.",
+        features: [
+            "Conversational AI assistant using LLM function/tool calling to create and modify projects and tasks",
+            "JWT authentication with role-based authorization for secure multi-user access",
+            "Dynamic forms and reusable tables with pagination, filtering, and conditional validation",
+            "Context-aware querying of application data using RAG (Retrieval-Augmented Generation)",
+            "Structured JSON outputs for reliable task extraction and ticket analysis",
+            "Backend services enforcing validation, authorization, and database operations"
+        ],
+        tech: [
+            "React.js", "TypeScript", "Node.js", "Express.js",
+            "MySQL", "REST API", "Google Gemini API", "LLM Integration", "RAG"
+        ],
+        period: "2025-Present",
+        link: [{ Website: 'http://161.118.190.24/'}],
+        highlights: [
+            "Built AI layer that separates intent extraction from backend validation",
+            "Enabled natural-language task creation reducing manual form entry by 70%",
+            "Delivered scalable architecture combining strict TypeScript typing with enterprise-grade workflows"
+        ]
+    },
     {
         title: "Team Assist CRM",
         type: "Enterprise CRM Platform (Company Internal)",
@@ -100,7 +126,7 @@ const projects = [
         tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MySQL", "REST API", "Android (Java)", "Payment Gateway", "SMS/Email Integration", "Push Notifications"],
         period: "2024-2025",
         link: [
-            { Admin: "https://dmc.websteptech.co.uk/" }, 
+            { Admin: "https://dmc.websteptech.co.uk/" },
             { Android: "https://play.google.com/store/apps/details?id=com.dmcsolidwaste&hl=en" }
         ],
         highlights: [

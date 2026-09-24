@@ -1,125 +1,137 @@
-import { Menu, X, Home, Info, Briefcase } from 'lucide-react';
-import { useEffect, useState } from 'react'
+import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+
+const NAV_LINKS = [
+    { name: 'Home', href: '/home' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'About', href: '/about' },
+];
+
+// Design tokens — keep these hex values in sync with AppLayout.jsx, Home.jsx,
+// Projects.jsx and About.jsx if you change the palette.
+const fontDisplay = { fontFamily: "'Space Grotesk', sans-serif" };
+const fontMono = { fontFamily: "'IBM Plex Mono', monospace" };
 
 export default function Header() {
     const location = useLocation();
-    const [activeSection, setActiveSection] = useState(location.pathname ?? '/home');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const reduceMotion = useReducedMotion();
 
     useEffect(() => {
-        setActiveSection(location.pathname)
-    }, [location.pathname]);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
+        const handleScroll = () => setScrolled(window.scrollY > 12);
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navLinks = [
-        {
-            name: 'Home',
-            href: '/home',
-            icon: <Home className='w-4 h-4 text-blue-400' />
-        },
-        {
-            name: 'Projects',
-            href: '/projects',
-            icon: <Briefcase className='w-4 h-4 text-blue-400' />
-        },
-        {
-            name: 'About',
-            href: '/about',
-            icon: <Info className='w-4 h-4 text-blue-400' />
-        }
-    ];
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [location.pathname]);
+
+    const activePath = location.pathname === '/' ? '/home' : location.pathname;
 
     return (
-        <nav
-            className={`h-16 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/65 backdrop-blur-md shadow-lg' : 'bg-slate-900'
+        <div
+            className={`fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b transition-colors duration-300 ${scrolled ? 'border-[#C9CFD8]' : 'border-transparent'
                 }`}
         >
-            <div className="w-full h-16 mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="h-16 flex items-center justify-between">
-                    {/* Logo/Brand */}
-                    <Link to="/home" className="flex items-center gap-2 group">
-                        <div className="bg-blue-600 p-2 rounded-lg group-hover:bg-blue-500 transition-colors">
-                            <Home className="w-5 h-5 text-white" />
-                        </div>
-                        {/* <div className="hidden sm:block">
-                            <h1 className="text-white font-bold text-md">Indrasish Banerjee</h1>
-                            <p className="text-gray-400 text-xs">Frontend Developer</p>
-                        </div> */}
+                    {/* Logo */}
+                    <Link
+                        to="/home"
+                        className="flex items-center gap-3 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6772E] focus-visible:ring-offset-2"
+                    >
+                        <span
+                            className="relative flex items-center justify-center w-9 h-9 text-sm font-semibold text-white bg-[#151A24] select-none"
+                            style={fontDisplay}
+                        >
+                            IB
+                            <span className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#C6772E]" />
+                        </span>
+                        <span className="hidden sm:flex flex-col leading-tight">
+                            <span className="text-sm font-medium text-[#151A24]" style={fontDisplay}>
+                                Indrasish Banerjee
+                            </span>
+                            <span className="text-xs text-[#5B6472]" style={fontMono}>
+                                full-stack · genAI
+                            </span>
+                        </span>
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    <div className="h-full hidden md:flex items-center space-x-1">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                to={link.href}
-                                onClick={() => setActiveSection(link.href)}
-                                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${activeSection === link.href
-                                    ? 'bg-blue-600 text-white'
-                                    : 'text-gray-300 hover:text-white hover:bg-slate-800'
-                                    }`}
-                            >
-                                <div className='flex items-center gap-1.5'>
-                                    {link.icon}
+                    {/* Desktop nav */}
+                    <div className="hidden md:flex items-center gap-1">
+                        {NAV_LINKS.map((link) => {
+                            const isActive = activePath === link.href;
+                            return (
+                                <Link
+                                    key={link.href}
+                                    to={link.href}
+                                    className={`relative px-4 py-2 text-sm font-medium rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6772E] ${isActive ? 'text-[#151A24]' : 'text-[#5B6472] hover:text-[#151A24]'
+                                        }`}
+                                >
                                     {link.name}
-                                </div>
-                            </Link>
-                        ))}
+                                    {isActive && (
+                                        <motion.span
+                                            layoutId="nav-active-indicator"
+                                            className="absolute left-4 right-4 -bottom-[1px] h-[2px] bg-[#C6772E]"
+                                            transition={
+                                                reduceMotion
+                                                    ? { duration: 0 }
+                                                    : { type: 'spring', stiffness: 380, damping: 32 }
+                                            }
+                                        />
+                                    )}
+                                </Link>
+                            );
+                        })}
                     </div>
 
-                    {/* Mobile menu button */}
+                    {/* Mobile toggle */}
                     <button
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-slate-800 transition-colors"
-                        aria-label="Toggle menu"
-                        style={{
-                            backgroundColor: isMenuOpen ? 'red' : ''
-                        }}
+                        onClick={() => setIsMenuOpen((v) => !v)}
+                        className="md:hidden p-2 -mr-2 text-[#151A24] rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6772E]"
+                        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                        aria-expanded={isMenuOpen}
                     >
-                        {isMenuOpen ? (
-                            <X className="w-6 h-6" />
-                        ) : (
-                            <Menu className="w-6 h-6" />
-                        )}
+                        {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
                 </div>
             </div>
 
-            {/* Mobile Navigation */}
-            {isMenuOpen && (
-                <div className="md:hidden border-t border-slate-800">
-                    <div className="px-4 py-3 space-y-1 bg-slate-900/98 backdrop-blur-md">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                to={link.href}
-                                className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeSection === link.href
-                                    ? 'bg-blue-600 text-white'
-                                    : 'text-gray-300 hover:text-white hover:bg-slate-800'
-                                    }`}
-                                onClick={() => {
-                                    setActiveSection(link.href);
-                                    setIsMenuOpen(false);
-                                }}
-                            >
-                                <div className='flex items-center gap-1'>
-                                    {link.icon}
-                                    {link.name}
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            )}
-        </nav>
+            {/* Mobile nav panel */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={reduceMotion ? { duration: 0 } : { duration: 0.22, ease: 'easeInOut' }}
+                        className="md:hidden overflow-hidden bg-white border-t border-[#C9CFD8]"
+                    >
+                        <div className="px-4 py-2">
+                            {NAV_LINKS.map((link) => {
+                                const isActive = activePath === link.href;
+                                return (
+                                    <Link
+                                        key={link.href}
+                                        to={link.href}
+                                        className={`flex items-center py-3 px-3 text-base font-medium border-l-2 ${isActive
+                                                ? 'text-[#151A24] border-[#C6772E]'
+                                                : 'text-[#5B6472] border-transparent'
+                                            }`}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                );
+                            })}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
     );
 }
